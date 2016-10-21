@@ -18,7 +18,6 @@ maxletters <- max(puzzlewords$letters)
 testlength <- 3
 
 while(testlength-1==maxletters) {
-    maxletters
     testwords <- puzzlewords$word[puzzlewords$letters==maxletters]
     addwords <- NULL
     
@@ -28,7 +27,7 @@ while(testlength-1==maxletters) {
                       grep(i, legalwords$word[legalwords$letters == testlength]))
     }
   
-    addwords <- unqiue(addwords)
+    addwords <- unique(addwords)
     puzzlewords <- rbind(puzzlewords,
                          legalwords[legalwords$letters == testlength,][addwords,])
       
